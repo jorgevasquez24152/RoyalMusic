@@ -23,7 +23,7 @@
                 <input type="text" name="username" /><br>
                 <label for="pass">Contraseña</label>
                 <input type="password" name="pass" /><br>
-                <input type="submit" name="Iniciar sesion" />
+                <input type="submit" name="IniciarSesion" value="Iniciar sesión" />
             </form>
             <a href="register.jsp">Registrame</a>
         </aside>

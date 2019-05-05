@@ -1,9 +1,3 @@
-<%-- 
-    Document   : menu
-    Created on : 4/05/2019, 08:56:11 PM
-    Author     : jorge
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
