@@ -57,7 +57,7 @@ public class DBMethods extends DBConnection {
     // Metodo para probar funcionamiento de la autenticacion y verificacion
     //public static void main(String[] args) {
     //    DBMethods co = new DBMethods();
-    //    System.out.println(co.autenticacion("jadmin", "12345"));
+    //    System.out.println(co.autenticacion("jadmin", "Royalmusic1901"));
     //}
 
     public boolean registrar(int id_user, String name, String lastname, String username, String password) {

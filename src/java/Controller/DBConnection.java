@@ -15,11 +15,11 @@ public class DBConnection {
         try {
 
             //  Carga el driver de la base de datos
-            Class.forName("oracle.jdbc.OracleDriver");
+            Class.forName("oracle.jdbc.driver.OracleDriver");
             System.out.println("Driver de ORACLE cargado");
 
             String username = "ROYALMUSICDBA";
-            String password = "123456";
+            String password = "Royal19";
             String url = "jdbc:oracle:thin:@localhost:1521:XE";
 
             conexion = DriverManager.getConnection(url, username, password);

@@ -18,7 +18,7 @@
     
         <aside>
             <h2>Iniciar sesion</h2>
-            <form action="InicioSesion" method="post">
+            <form action="Login" method="post">
                 <label for="username">Usuario</label>
                 <input type="text" name="username" /><br>
                 <label for="pass">Contraseña</label>
@@ -28,7 +28,14 @@
             <a href="register.jsp">Registrame</a>
         </aside>
         <footer>
-            <h3>Politécnico Colombiano Jaime Isaza Cadavid</h3>
+            <h2>Politécnico Colombiano Jaime Isaza Cadavid</h2>
+            <h3>PPI 2019 1</h3>
+            <p>Creado por:</p>
+            <ul>
+                <li>Valentina Cardona</li>
+                <li>Yuliana Estrada</li>
+                <li>Jorge Vasquez</li>
+            </ul>
         </footer>
     </body>
 </html>

@@ -23,10 +23,10 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String usuario = request.getParameter("usuario");
-        String password = request.getParameter("password");
+        String username = request.getParameter("username");
+        String password = request.getParameter("pass");
         DBMethods consulta = new DBMethods();
-        if (consulta.autenticacion(usuario, password)) {
+        if (consulta.autenticacion(username, password)) {
             response.sendRedirect("menu.jsp");
         } else {
             response.sendRedirect("index.jsp");
