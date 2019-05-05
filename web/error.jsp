@@ -4,23 +4,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JSP Page</title>
+        <title>Royal Music Error</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="styles.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1 >Ufff que pena ocurrio un error en la aplicación</h1>
+        <h1 >Ha ocurrido un error en la aplicación</h1>
+        // metodo para traer las variables de sesion capturadas en servlet Login y mostrarlas
         <%
-            String mensage = (String) request.getAttribute("mensage");
-            if (mensage != null) {
-                out.print("El mensaje de error es: ");
-                out.print(mensage + "<br/>" );
+            String message = (String) request.getAttribute("message");
+            if (message != null) {
+                out.print("<b>" + "El mensaje de error es: " + "</b>" + "<br/>");
+                out.print(message + "<br/>" );
             }
-            String trazaPila = (String) request.getAttribute("trazaPila");
-            if (trazaPila != null) {
-                out.print("La traza de la pila es: " + "<br/>");
-                out.print(trazaPila);
+            String StackTrace = (String) request.getAttribute("StackTrace");
+            if (StackTrace != null) {
+                out.print("<b>" + "La traza de la pila es: " + "</b>" + "<br/>");
+                out.print(StackTrace + "<br/>");
             }
         %>
     </body>

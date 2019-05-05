@@ -10,7 +10,7 @@ public class DBConnection {
 
     private static Connection conexion;
 
-    public static Connection getConexion() {
+    public static Connection getConexion() throws Exception {
         conexion = null;
         try {
 
@@ -25,11 +25,13 @@ public class DBConnection {
             conexion = DriverManager.getConnection(url, username, password);
             System.out.println("Conexión establecida");
         } catch (ClassNotFoundException ex) {
-            System.out.println("Clase no encontrada");
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            throw new Exception("El Oracle Driver no se encontró");
+            //System.out.println("Clase no encontrada");
+            //Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            System.out.println("Excepción: " + ex.getMessage());
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            throw new Exception("Excepción de SQL");
+            //System.out.println("Excepción: " + ex.getMessage());
+            //Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
         return conexion;
     }

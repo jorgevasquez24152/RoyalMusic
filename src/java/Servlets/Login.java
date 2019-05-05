@@ -1,8 +1,12 @@
 package Servlets;
 
+import Controller.DBConnection;
 import Controller.DBMethods;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.sql.Connection;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +26,26 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        // metodo para realizar prueba de conexión y en caso de error invocar pag. erro.jsp
+        try {
+            Connection cx = DBConnection.getConexion();
+            System.out.println("Conexión exitosa");
+        } catch (Exception ex) {
+            String message = ex.getMessage();
+            StringWriter errors = new StringWriter();
+            ex.printStackTrace(new PrintWriter(errors));
+            String StackTrace = errors.toString();
+            
+            // variables de sesion
+            request.setAttribute("message", message);
+            request.setAttribute("StackTrace", StackTrace);
 
+            RequestDispatcher view = request.getRequestDispatcher("/error.jsp");
+            view.forward(request, response);
+        }
+        
+        // metodo para validar los datos de ingreso, capturados en el inicio de sesión de index.jsp
         String username = request.getParameter("username");
         String password = request.getParameter("pass");
         DBMethods consulta = new DBMethods();
@@ -59,6 +82,7 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+
     }
 
     /**
