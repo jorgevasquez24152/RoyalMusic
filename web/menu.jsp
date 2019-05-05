@@ -19,6 +19,18 @@
                 </ul>
             </nav>
         </header>
-        <h1>Hello World!</h1>
+        
+        <main>
+            <h1>Hello World!</h1>
+        </main>
+        
+        <aside>
+            
+        </aside>
+        
+        <footer>
+            <h3>Politécnico Colombiano Jaime Isaza Cadavid</h3>
+            
+        </footer>
     </body>
 </html>
