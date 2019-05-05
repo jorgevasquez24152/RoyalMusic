@@ -1,4 +1,4 @@
-package Controlador;
+package Controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,8 +18,8 @@ public class DBConnection {
             Class.forName("oracle.jdbc.OracleDriver");
             System.out.println("Driver de ORACLE cargado");
 
-            String username = "RoyalMusicDBA";
-            String password = "12345";
+            String username = "ROYALMUSICDBA";
+            String password = "123456";
             String url = "jdbc:oracle:thin:@localhost:1521:XE";
 
             conexion = DriverManager.getConnection(url, username, password);
