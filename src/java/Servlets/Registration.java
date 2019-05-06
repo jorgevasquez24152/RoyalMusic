@@ -1,7 +1,11 @@
 package Servlets;
 
+import Controller.DBConnection;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.sql.Connection;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +26,23 @@ public class Registration extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+         // metodo para realizar prueba de conexión y en caso de error invocar pag. error.jsp
+        try {
+            Connection cx = DBConnection.getConexion();
+            System.out.println("Conexión exitosa");
+        } catch (Exception ex) {
+            String message = ex.getMessage();
+            StringWriter errors = new StringWriter();
+            ex.printStackTrace(new PrintWriter(errors));
+            String StackTrace = errors.toString();
+            
+            // variables de sesion
+            request.setAttribute("message", message);
+            request.setAttribute("StackTrace", StackTrace);
 
+            RequestDispatcher view = request.getRequestDispatcher("/error.jsp");
+            view.forward(request, response);
+        }
 
 
         //try (PrintWriter out = response.getWriter()) {

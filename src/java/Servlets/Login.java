@@ -48,8 +48,8 @@ public class Login extends HttpServlet {
         // metodo para validar los datos de ingreso, capturados en el inicio de sesión de index.jsp
         String username = request.getParameter("username");
         String password = request.getParameter("pass");
-        DBMethods consulta = new DBMethods();
-        if (consulta.autenticacion(username, password)) {
+        DBMethods autenticar = new DBMethods();
+        if (autenticar.autenticacion(username, password)) {
             response.sendRedirect("menu.jsp");
         } else {
             response.sendRedirect("index.jsp");
