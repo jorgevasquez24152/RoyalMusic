@@ -1,6 +1,6 @@
-package Servlets;
+package controller;
 
-import Controller.DBConnection;
+import model.util.DBConnection;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;

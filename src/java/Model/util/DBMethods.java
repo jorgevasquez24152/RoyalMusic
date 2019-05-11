@@ -1,5 +1,7 @@
-package Controller;
+package model.util;
 
+import model.util.DBConnection;
+import Model.pojo.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
@@ -7,26 +9,33 @@ import java.util.logging.Logger;
 
 public class DBMethods extends DBConnection {
 
-    public boolean autenticacion(String username, String password) {
+    //public boolean autenticacion(String username, String password) {
+    public boolean autenticacion(Object objeto) {
         PreparedStatement pst = null;
         ResultSet rs = null;
-
+        User sesionUser = (User)objeto;
+        
         try {
             String consulta = "SELECT * FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
             pst = getConexion().prepareStatement(consulta);
-            pst.setString(1, username);
-            pst.setString(2, password);
+            
+            pst.setString(1, sesionUser.getUsername());
+            pst.setString(2, sesionUser.getPassword());
+
+            //pst.setString(1, username);
+            //pst.setString(2, password);
+            
             rs = pst.executeQuery();
 
             while (rs.next()) {
                 for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
                     String userFinded = rs.getString(i);
-                    if (username == userFinded) {
+                    if (sesionUser.getUsername() == userFinded) {
                     }
                 }
                 for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
                     String passwordFinded = rs.getString(i);
-                    if (password == passwordFinded) {
+                    if (sesionUser.getPassword() == passwordFinded) {
                     }
                 }
                 return true;

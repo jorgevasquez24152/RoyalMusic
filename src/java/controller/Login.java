@@ -1,7 +1,8 @@
-package Servlets;
+package controller;
 
-import Controller.DBConnection;
-import Controller.DBMethods;
+import model.util.DBMethods;
+import model.util.DBConnection;
+import Model.pojo.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -43,13 +44,18 @@ public class Login extends HttpServlet {
 
             RequestDispatcher view = request.getRequestDispatcher("/error.jsp");
             view.forward(request, response);
+            
         }
         
         // metodo para validar los datos de ingreso, capturados en el inicio de sesión de index.jsp
-        String username = request.getParameter("username");
-        String password = request.getParameter("pass");
+        User sesionUser = new User();
+        sesionUser.setUsername(request.getParameter("username"));
+        sesionUser.setPassword(request.getParameter("pass"));
+        //String username = request.getParameter("username");
+        //String password = request.getParameter("pass");
         DBMethods autenticar = new DBMethods();
-        if (autenticar.autenticacion(username, password)) {
+        
+        if (autenticar.autenticacion(sesionUser)) {
             response.sendRedirect("menu.jsp");
         } else {
             response.sendRedirect("index.jsp");

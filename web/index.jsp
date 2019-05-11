@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-            <h1>Bienvenido a Royal Music</h1>
+            <h1 id="tituloBienvenida">Bienvenido a Royal Music</h1>
         </header>
 
         <center>
@@ -17,7 +17,7 @@
         </center>
     
         <aside>
-            <h2>Iniciar sesion</h2>
+            <h2 id="tituloIniciarSesion">Iniciar sesion</h2>
             <form action="Login" method="post">
                 <label for="username">Usuario</label>
                 <input type="text" name="username" /><br>
