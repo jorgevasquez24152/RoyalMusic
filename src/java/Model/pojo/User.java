@@ -1,4 +1,4 @@
-package Model.pojo;
+package model.pojo;
 
 public class User {
 

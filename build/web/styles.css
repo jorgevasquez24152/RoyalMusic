@@ -1,0 +1,14 @@
+body{
+    width: 900px;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    background-color: darkblue;
+    color:white;
+    text-align: center;
+}
+
+footer {
+    margin: auto;
+}
