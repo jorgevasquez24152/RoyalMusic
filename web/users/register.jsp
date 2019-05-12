@@ -43,12 +43,13 @@
                 <input type="password" name="pass" /><br>
                 <input type="submit" name="FinalizarRegistro" value="Finalizar registro" />
             </form>
-            <a href="index.jsp">Iniciar sesión</a>
+            <a href="../index.jsp">Iniciar sesión</a>
         </center>
     
         <aside>
             <img src="Images/equalizer-153212_1280.png" alt="" height="150" width="250"/>
         </aside>
+        
         <footer>
             <h2>Politécnico Colombiano Jaime Isaza Cadavid</h2>
             <h3>PPI 2019 1</h3>

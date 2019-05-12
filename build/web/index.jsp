@@ -25,7 +25,7 @@
                 <input type="password" name="pass" /><br>
                 <input type="submit" name="IniciarSesion" value="Iniciar sesión" />
             </form>
-            <a href="register.jsp">Registrame</a>
+            <a href="users/register.jsp">Registrame</a>
         </aside>
         <footer>
             <h2>Politécnico Colombiano Jaime Isaza Cadavid</h2>
