@@ -2,7 +2,7 @@ package controller;
 
 import model.util.DBMethods;
 import model.util.DBConnection;
-import Model.pojo.User;
+import model.pojo.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -53,9 +53,9 @@ public class Login extends HttpServlet {
         sesionUser.setPassword(request.getParameter("pass"));
         //String username = request.getParameter("username");
         //String password = request.getParameter("pass");
-        DBMethods autenticar = new DBMethods();
+        DBMethods loginAttemp = new DBMethods();
         
-        if (autenticar.autenticacion(sesionUser)) {
+        if (loginAttemp.authentication(sesionUser)) {
             response.sendRedirect("menu.jsp");
         } else {
             response.sendRedirect("index.jsp");
@@ -88,7 +88,6 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
     }
 
     /**

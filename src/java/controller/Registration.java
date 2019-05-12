@@ -1,5 +1,6 @@
 package controller;
 
+import model.pojo.User;
 import model.util.DBConnection;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.util.DBMethods;
 
 public class Registration extends HttpServlet {
 
@@ -43,7 +45,25 @@ public class Registration extends HttpServlet {
             RequestDispatcher view = request.getRequestDispatcher("/error.jsp");
             view.forward(request, response);
         }
-
+        
+        User newUser = new User();
+        newUser.setIdentification_type(request.getParameter("identificationType"));
+        newUser.setIdentification_number(request.getParameter("identificationNumber"));
+        newUser.setFirstname(request.getParameter("firstname"));
+        newUser.setMiddlename(request.getParameter("middlename"));
+        newUser.setLastname(request.getParameter("lastname"));
+        newUser.setSecond_lastname(request.getParameter("secondLastname"));
+        newUser.setPhone_number(request.getParameter("phoneNumber"));
+        newUser.setEmail(request.getParameter("email"));
+        newUser.setUsername(request.getParameter("username"));
+        newUser.setPassword(request.getParameter("pass"));
+        
+        DBMethods newRegisteredUser = new DBMethods();
+        if (newRegisteredUser.register(newUser)) {
+            response.sendRedirect("menu.jsp");
+        } else {
+            response.sendRedirect("index.jsp");
+        }
 
         //try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */

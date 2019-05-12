@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <link rel=”icon” type=”image/ico” href="Images/favicon.ico"/>
     </head>
     <body>
         <header>
@@ -15,11 +16,11 @@
         <center>
             
             <h2>Registro de usuario</h2>
-            <form action="registration" method="post">
+            <form action="Registration" method="post">
                 <label for="identificationType">Tipo de identificación</label>
                 <input list="idTypes" name="identificationType" />
                     <datalist id="idTypes">
-                        <option value="Cédula">
+                        <option value="Cedula">
                         <option value="Pasaporte">
                     </datalist><br>
                 <label for="identificationNumber">Número de identificación</label>

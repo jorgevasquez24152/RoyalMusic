@@ -5,16 +5,16 @@
         <servlet-class>controller.Login</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>registration</servlet-name>
+        <servlet-name>Registration</servlet-name>
         <servlet-class>controller.Registration</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Login</servlet-name>
-        <url-pattern>/Login</url-pattern>
+        <servlet-name>Registration</servlet-name>
+        <url-pattern>/Registration</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>registration</servlet-name>
-        <url-pattern>/registration</url-pattern>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

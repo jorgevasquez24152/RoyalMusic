@@ -11,8 +11,9 @@
     </head>
     <body>
         <h1 >Ha ocurrido un error en la aplicación</h1>
-        // metodo para traer las variables de sesion capturadas en servlet Login y mostrarlas
+        
         <%
+            // metodo para traer las variables de sesion capturadas en servlet Login y mostrarlas
             String message = (String) request.getAttribute("message");
             if (message != null) {
                 out.print("<b>" + "El mensaje de error es: " + "</b>" + "<br/>");
